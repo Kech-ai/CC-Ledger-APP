@@ -1,18 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { AppProvider } from './context/AppContext';
+// This file is obsolete. The application has been migrated to a full MERN stack.
+// The main frontend entry point is now located at /client/index.tsx
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+// To run the application:
+// 1. Open your terminal
+// 2. Navigate to the 'server' directory: cd server
+// 3. Install dependencies: npm install
+// 4. Start the server: npm start
+// 5. Open your browser to http://localhost:5000
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <AppProvider>
-        <App />
-    </AppProvider>
-  </React.StrictMode>
-);
+console.log("This is an obsolete frontend entry point. Please run the server as instructed.");

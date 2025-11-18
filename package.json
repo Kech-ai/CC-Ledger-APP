@@ -9,20 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "express": "^5.1.0",
-    "dotenv": "^17.2.3",
-    "cors": "^2.8.5",
-    "path": "^0.12.7",
     "url": "^0.11.4",
     "mongoose": "^8.20.0",
     "bcryptjs": "^3.0.3",
+    "multer": "^2.0.2",
+    "fs": "^0.0.1-security",
+    "react": "^19.2.0",
     "jsonwebtoken": "^9.0.2",
     "express-async-handler": "^1.2.0",
-    "fs": "^0.0.1-security",
-    "multer": "^2.0.2",
-    "@google/genai": "^1.30.0"
+    "@google/genai": "^1.30.0",
+    "react-dom": "^19.2.0",
+    "path": "^0.12.7",
+    "dotenv": "^17.2.3",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
