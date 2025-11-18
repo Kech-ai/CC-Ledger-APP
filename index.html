@@ -1,46 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CC-Ledger: AI-Powered Accounting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'Noto Serif Ethiopic', 'sans-serif'],
-            },
-            colors: {
-              'cctech-primary': '#00529B',
-              'cctech-secondary': '#00A9E0',
-              'cctech-dark': '#002B49',
-              'cctech-light': '#E6F6FD',
-              'cctech-gray': '#F0F2F5',
-            }
-          }
-        }
-      }
-    </script>
-  <script type="importmap">
+<head>
+    <meta charset="UTF-8">
+    <title>CC-Ledger: Application Runner</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f0f2f5; color: #333; }
+        .container { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px; margin: 20px;}
+        h1 { color: #002B49; font-size: 24px; }
+        code { background: #e8e8e8; padding: 4px 8px; border-radius: 4px; font-family: "SF Mono", "Consolas", "Menlo", monospace; font-size: 14px; }
+        p { line-height: 1.6; font-size: 16px; }
+        .steps { text-align: left; display: inline-block; margin-top: 20px; }
+        .warning { margin-top: 20px; font-size: 14px; color: #555; }
+    </style>
+<script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+    "express": "https://aistudiocdn.com/express@^5.1.0",
+    "dotenv": "https://aistudiocdn.com/dotenv@^17.2.3",
+    "cors": "https://aistudiocdn.com/cors@^2.8.5",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "mongoose": "https://aistudiocdn.com/mongoose@^8.20.0",
+    "bcryptjs": "https://aistudiocdn.com/bcryptjs@^3.0.3",
+    "jsonwebtoken": "https://aistudiocdn.com/jsonwebtoken@^9.0.2",
+    "express-async-handler": "https://aistudiocdn.com/express-async-handler@^1.2.0",
+    "fs": "https://aistudiocdn.com/fs@^0.0.1-security",
+    "multer": "https://aistudiocdn.com/multer@^2.0.2",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
   }
 }
 </script>
 </head>
-  <body class="bg-cctech-gray">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+<body>
+    <div class="container">
+        <h1>MERN Application Ready</h1>
+        <p>This application is now a full MERN stack application and must be run from the backend server.</p>
+        <div class="steps">
+            <p>1. Open a terminal in the project's root directory.</p>
+            <p>2. Navigate to the server: <code>cd server</code></p>
+            <p>3. Install dependencies: <code>npm install</code></p>
+            <p>4. Start the server: <code>npm start</code></p>
+        </div>
+        <p>Then, open your browser and navigate to <strong>http://localhost:5000</strong>.</p>
+        <p class="warning">The old frontend-only files in the root directory (like this one's predecessor) are now obsolete and should be deleted.</p>
+    </div>
+</body>
 </html>
