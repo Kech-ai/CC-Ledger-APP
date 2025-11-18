@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   // Check if the MONGO_URI is set and is not the placeholder value
-  if (!process.env.MONGO_URI || process.env.MONGO_URI === 'your_mongodb_connection_string_here') {
+  if (!process.env.MONGO_URI || process.env.MONGO_URI === 'mongodb+srv://kalebt_db_user:sFV7m0DigI4hoPJ0@cluster0.w5tqheo.mongodb.net/?appName=Cluster0') {
     console.warn('-------------------------------------------------------------------');
     console.warn('WARNING: MONGO_URI is not set in server/.env file.');
     console.warn('The application will start, but API endpoints requiring a database will not work.');

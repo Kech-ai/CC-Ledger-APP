@@ -34,19 +34,14 @@ const __dirname = path.dirname(__filename);
 // Make uploads folder static
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
+// Serve frontend
+const clientPath = path.resolve(__dirname, '..', 'client');
+app.use(express.static(clientPath));
 
-if (process.env.NODE_ENV === 'production') {
-    const clientPath = path.resolve(__dirname, '..', 'client');
-    app.use(express.static(clientPath));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(clientPath, 'index.html'));
-    });
-} else {
-    app.get('/', (req, res) => {
-        res.send('API is running...');
-    });
-}
+// For any route that is not an API route, serve the frontend
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(clientPath, 'index.html'));
+});
 
 
 // Error Handling Middleware
