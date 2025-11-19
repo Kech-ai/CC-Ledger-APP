@@ -1,12 +1,17 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
-  // Check if the MONGO_URI is set and is not the placeholder value
-  if (!process.env.MONGO_URI || process.env.MONGO_URI === 'mongodb+srv://kalebt_db_user:sFV7m0DigI4hoPJ0@cluster0.w5tqheo.mongodb.net/?appName=Cluster0') {
+  // Check if the MONGO_URI is set and is not left at a dummy placeholder value.
+  // The real value must be provided via environment variables (e.g. server/.env in dev,
+  // or the hosting provider's environment settings in production).
+  const isUnset = !process.env.MONGO_URI;
+  const isPlaceholder = process.env.MONGO_URI === 'your_mongo_connection_string_here';
+
+  if (isUnset || isPlaceholder) {
     console.warn('-------------------------------------------------------------------');
-    console.warn('WARNING: MONGO_URI is not set in server/.env file.');
+    console.warn('WARNING: MONGO_URI is not configured.');
     console.warn('The application will start, but API endpoints requiring a database will not work.');
-    console.warn('Please add your MongoDB connection string to server/.env');
+    console.warn('Please configure the MongoDB connection string via environment variables.');
     console.warn('-------------------------------------------------------------------');
     return;
   }

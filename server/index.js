@@ -12,7 +12,13 @@ import journalRoutes from './routes/journalRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
-dotenv.config();
+// Load environment variables.
+// - In local dev, this loads server/.env regardless of the working directory.
+// - In production (e.g. Render), config should come from real environment variables;
+//   if server/.env does not exist, dotenv.config will simply do nothing.
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 connectDB();
 
 const app = express();
