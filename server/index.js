@@ -34,9 +34,6 @@ app.use('/api/ai', aiRoutes);
 app.use('/api/uploads', uploadRoutes);
 
 // --- SERVE STATIC ASSETS ---
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // Make uploads folder static
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
