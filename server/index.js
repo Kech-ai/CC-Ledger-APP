@@ -19,6 +19,13 @@ import uploadRoutes from './routes/uploadRoutes.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+if (!process.env.JWT_SECRET) {
+  console.warn('WARNING: JWT_SECRET is not set. Auth will fail until JWT_SECRET is configured.');
+} else {
+  console.log('JWT_SECRET is configured.');
+}
+
 connectDB();
 
 const app = express();
