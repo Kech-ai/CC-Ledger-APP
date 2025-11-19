@@ -37,8 +37,8 @@ app.use('/api/uploads', uploadRoutes);
 // Make uploads folder static
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
-// Serve frontend
-const clientPath = path.resolve(__dirname, '..', 'client');
+// Serve frontend (built Vite app from dist/)
+const clientPath = path.resolve(__dirname, '..', 'dist');
 app.use(express.static(clientPath));
 
 // For any route that is not an API route, serve the frontend
